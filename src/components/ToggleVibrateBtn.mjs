@@ -1,14 +1,5 @@
 import { Component, InvalidNodeError } from "../lib/Component.mjs";
-import { Vibration } from "../services/VibrationService.mjs";
-import { services } from "../services/index.mjs";
-
-const BEEP = 300;
-const LONG_BEEP = BEEP * 2;
-const REST = 100;
-
-const vibrations = {
-    pulse: new Vibration([BEEP, REST, BEEP, REST, BEEP, REST]),
-};
+import { services, vibrations } from "../services/index.mjs";
 
 export class ToggleVibrateBtn extends Component {
     constructor(selector) {
@@ -40,6 +31,6 @@ export class ToggleVibrateBtn extends Component {
             return;
         }
 
-        services.vibration.vibrate(vibrations.pulse, true);
+        services.vibration.vibrate(vibrations.pulseLong, true);
     }
 }

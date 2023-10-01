@@ -80,3 +80,21 @@ export class Vibration {
             : sequence;
     }
 }
+
+const BEEP = 300;
+const LONG_BEEP = BEEP * 2;
+const REST = 100;
+
+export const vibrations = {
+    pulse: new Vibration([BEEP, REST, BEEP, REST, BEEP, REST]),
+    pulseLong: new Vibration([
+        BEEP,
+        REST,
+        LONG_BEEP,
+        REST,
+        BEEP,
+        REST,
+        LONG_BEEP,
+        REST,
+    ]),
+};
