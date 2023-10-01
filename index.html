@@ -11,7 +11,7 @@
         <div id="root">
             <div class="relative">
                 <div
-                    class="hidden text-white/60 text-xl uppercase font-semibold tracking-widest absolute inset-0 md:bg-gray-900 md:flex md:justify-center md:items-center h-screen text-center z-50"
+                    class="text-white/60 md:bg-gray-900 md:flex md:justify-center md:items-center absolute inset-0 z-50 hidden h-screen text-xl font-semibold tracking-widest text-center uppercase"
                 >
                     Please use your phone to access PressurePoints⚡️
                 </div>
@@ -19,7 +19,7 @@
                     class="bg-[#EA5455] h-screen w-full p-4 flex flex-col overflow-hidden"
                 >
                     <div
-                        class="bg-black rounded-xl p-5 flex flex-col items-center justify-between gap-5"
+                        class="rounded-xl flex flex-col items-center justify-between gap-5 p-5 bg-black"
                     >
                         <div
                             class="bg-[#F9F5EB] text-[#977641] p-5 rounded-md w-full flex flex-col justify-between items-center gap-20"
@@ -54,29 +54,32 @@
                             <span class="text-xl uppercase">OFF</span>
                             <span class="text-sm">01:02</span>
                         </div>
-                        <span class="text-white/25 text-lg brand-text"
-                            >PressurePoints</span
-                        >
+                        <span class="text-white/25 brand-text text-lg">
+                            PressurePoints
+                        </span>
                     </div>
-                    <div class="flex flex-col items-center w-full py-12 gap-16">
+                    <div class="flex flex-col items-center w-full gap-16 py-12">
                         <div
-                            class="flex items-center justify-between px-2 w-full"
+                            class="flex items-center justify-between w-full px-2"
                         >
                             <button
-                                class="rounded-full w-28 h-28 bg-black ml-4"
-                            ></button>
+                                id="toggle-vibration"
+                                class="w-28 h-28 ml-4 bg-black rounded-full"
+                            >
+                                <span class="sr-only"> Start vibrator </span>
+                            </button>
                             <div
-                                class="flex items-center gap-12 transform -rotate-45 z-0"
+                                class="z-0 flex items-center gap-12 -rotate-45"
                             >
                                 <button
-                                    class="flex items-center justify-center rounded-full w-12 h-12 bg-black text-white"
+                                    class="flex items-center justify-center w-12 h-12 text-white rotate-45 bg-black rounded-full"
                                 >
                                     -
                                 </button>
                                 <button
-                                    class="flex items-center justify-center rounded-full w-12 h-12 bg-black text-white"
+                                    class="flex items-center justify-center w-12 h-12 text-white rotate-45 bg-black rounded-full"
                                 >
-                                    -
+                                    +
                                 </button>
                             </div>
                         </div>
@@ -84,22 +87,22 @@
                             class="flex items-center gap-8 text-[#A03B3B] text-xs"
                         >
                             <button
-                                class="bg-black rounded-md px-8 p-2 uppercase"
+                                class="p-2 px-8 uppercase bg-black rounded-md"
                             >
                                 Mode
                             </button>
                             <button
-                                class="bg-black rounded-md px-8 p-2 uppercase"
+                                class="p-2 px-8 uppercase bg-black rounded-md"
                             >
                                 Help
                             </button>
                         </div>
                     </div>
-                    <div class="absolute bottom-10 w-">
+                    <div class="bottom-10 w- absolute">
                         <img
                             src="/assets/spots.svg"
                             alt="spots"
-                            class="scale-110 w-screen"
+                            class="w-screen scale-110"
                         />
                     </div>
                 </div>
