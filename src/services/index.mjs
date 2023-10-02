@@ -4,4 +4,4 @@ export const services = {
     vibration: new VibrationService(),
 };
 
-export { vibrations } from "./VibrationService.mjs";
+export { modes as vibrations } from "./VibrationService.mjs";

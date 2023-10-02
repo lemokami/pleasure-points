@@ -62,9 +62,10 @@ export class VibrationService {
 
 export class Vibration {
     /**
+     * @param {string} label Text to show for identifying the vibration
      * @param {number[] | number} sequence Vibration pattern
      */
-    constructor(sequence) {
+    constructor(label, sequence) {
         const isValidInput =
             Array.isArray(sequence) || typeof sequence === "number";
 
@@ -76,6 +77,8 @@ export class Vibration {
         this.duration = Array.isArray(sequence)
             ? sequence.reduce((duration, el) => duration + el, 0)
             : sequence;
+
+        this.label = label;
     }
 }
 
@@ -83,9 +86,9 @@ const BEEP = 300;
 const LONG_BEEP = BEEP * 2;
 const REST = 100;
 
-export const vibrations = {
-    pulse: new Vibration([BEEP, REST, BEEP, REST, BEEP, REST]),
-    pulseLong: new Vibration([
+export const modes = {
+    pulse: new Vibration("Pulse", [BEEP, REST, BEEP, REST, BEEP, REST]),
+    pulseLong: new Vibration("Long Pulse", [
         BEEP,
         REST,
         LONG_BEEP,
