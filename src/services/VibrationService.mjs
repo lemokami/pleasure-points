@@ -27,17 +27,15 @@ export class VibrationService {
         }
 
         try {
+            const result = window.navigator.vibrate(vibration.sequence);
+
+            this.isVibrating = true;
+
             if (loop) {
                 this.vibrationTimer = setInterval(() => {
-                    const result = window.navigator.vibrate(vibration.sequence);
-
-                    this.isVibrating = true;
+                    window.navigator.vibrate(vibration.sequence);
                 }, vibration.duration);
-
-                return;
             }
-
-            const result = window.navigator.vibrate(vibration.sequence);
 
             return result;
         } catch (err) {
