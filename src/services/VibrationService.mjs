@@ -7,8 +7,14 @@
  *
  */
 
+import { StateService } from "./StateService.mjs";
+
 export class VibrationService {
-    constructor() {
+    /**
+     * @param {StateService} state State service
+     */
+    constructor(state) {
+        this._state = state;
         this.canVibrate = !!window.navigator.vibrate;
         this.isVibrating = false;
         this.vibrationTimer = null;
@@ -37,6 +43,8 @@ export class VibrationService {
                 }, vibration.duration);
             }
 
+            this._state.set("currentMode", vibration);
+
             return result;
         } catch (err) {
             throw new Error("cannot vibrate");
@@ -45,6 +53,8 @@ export class VibrationService {
 
     stop() {
         try {
+            this._state.set("currentMode", null);
+
             window.navigator.vibrate(0);
 
             this.isVibrating = false;

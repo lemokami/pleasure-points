@@ -13,6 +13,8 @@ export class StateService {
      *
      * @param {string} key Key for storing the state value
      * @param {any} value Value of the state
+     *
+     * @returns Updated Ref
      */
     set(key, value) {
         if (key in this._state) {
@@ -22,6 +24,8 @@ export class StateService {
         }
 
         this._state[key] = new Ref(value);
+
+        return this._state[key];
     }
 
     /**
