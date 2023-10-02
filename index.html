@@ -1,16 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <link rel="shortcut icon" type="image/ico" href="/src/assets/favicon.ico" />
-    <title>Solid App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Pleasure Points: Find your pleasure</title>
 
-    <script src="/src/index.tsx" type="module"></script>
-  </body>
+        <link rel="stylesheet" href="./src/index.css" />
+    </head>
+    <body>
+        <div id="root">
+            <div class="relative">
+                <div
+                    class="text-white/60 md:bg-gray-900 md:flex md:justify-center md:items-center absolute inset-0 z-50 hidden h-screen text-xl font-semibold tracking-widest text-center uppercase"
+                >
+                    Please use your phone to access PressurePoints⚡️
+                </div>
+                <div
+                    class="bg-[#EA5455] h-screen w-full p-4 flex flex-col overflow-hidden"
+                >
+                    <div
+                        class="rounded-xl flex flex-col items-center justify-between gap-5 p-5 bg-black"
+                    >
+                        <div
+                            class="bg-[#F9F5EB] text-[#977641] p-5 rounded-md w-full flex flex-col justify-between items-center gap-20"
+                        >
+                            <div class="flex items-center gap-1">
+                                <img
+                                    src="/assets/heart-filled.svg"
+                                    alt="heart-filled"
+                                    class="w-7"
+                                />
+                                <img
+                                    src="/assets/heart-half.svg"
+                                    alt="heart-half"
+                                    class="w-7"
+                                />
+                                <img
+                                    src="/assets/heart-outline.svg"
+                                    alt="heart-outline"
+                                    class="w-7"
+                                />
+                                <img
+                                    src="/assets/heart-outline.svg"
+                                    alt="heart-outline"
+                                    class="w-7"
+                                />
+                                <img
+                                    src="/assets/heart-outline.svg"
+                                    alt="heart-outline"
+                                    class="w-7"
+                                />
+                            </div>
+                            <span id="current-mode" class="text-xl uppercase">
+                                --
+                            </span>
+                            <span id="timer" class="text-sm">xx:xx</span>
+                        </div>
+                        <span class="text-white/25 brand-text text-lg">
+                            PleasurePoints
+                        </span>
+                    </div>
+                    <div class="flex flex-col items-center w-full gap-16 py-12">
+                        <div
+                            class="flex items-center justify-between w-full px-2"
+                        >
+                            <button
+                                id="toggle-vibration"
+                                class="w-28 h-28 ml-4 bg-black rounded-full"
+                            >
+                                <span class="sr-only"> Start vibrator </span>
+                            </button>
+                            <div
+                                class="z-0 flex items-center gap-12 -rotate-45"
+                            >
+                                <button
+                                    class="flex items-center justify-center w-12 h-12 text-white -rotate-45 bg-black rounded-full"
+                                >
+                                    <img src="/assets/arrow.svg" alt="arrow" />
+                                </button>
+                                <button
+                                    class="flex items-center justify-center w-12 h-12 rotate-[135deg] text-white bg-black rounded-full"
+                                >
+                                    <img src="/assets/arrow.svg" alt="arrow" />
+                                </button>
+                            </div>
+                        </div>
+                        <div
+                            class="flex items-center gap-8 text-[#A03B3B] text-xs"
+                        >
+                            <button
+                                class="p-2 px-8 uppercase bg-black rounded-md"
+                            >
+                                Mode
+                            </button>
+
+                            <!-- 
+                            <button
+                                class="p-2 px-8 uppercase bg-black rounded-md"
+                            >
+                                Help
+                            </button>
+                            -->
+                        </div>
+                    </div>
+                    <div class="bottom-10 w-absolute">
+                        <img
+                            src="/assets/spots.svg"
+                            alt="spots"
+                            class="w-screen scale-110"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="./src/index.mjs" type="module"></script>
+    </body>
 </html>
