@@ -27,9 +27,12 @@ export class ToggleVibrateBtn extends Component {
     handleClick() {
         if (services.vibration.isVibrating) {
             services.vibration.stop();
+            services.state.set("startTime", null);
 
             return;
         }
+
+        services.state.set("startTime", new Date());
 
         services.vibration.vibrate(vibrations.pulseLong, true);
     }
