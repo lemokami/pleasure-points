@@ -35,6 +35,8 @@ export class Ref {
      * ref changes
      *
      * @param {(value: any) => any} watcher
+     *
+     * @returns Function to remove the watcher from the ref
      */
     watch(watcher) {
         if (typeof watcher !== "function") {
